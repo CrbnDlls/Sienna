@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Design";
+}
+
+<h2>Дизайн микроавтобуса</h2>
+
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            @Ajax.ActionLink("Экстерьер", "Exterior", null, new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "loadSpinner", OnBegin = "begin", UpdateTargetId = "carusel", InsertionMode = InsertionMode.Replace, AllowCache = true, OnFailure = "fail" }, new { @class = "nav-link active", id="linkExterior" })
+        </li>
+        <li class="nav-item">
+            @Ajax.ActionLink("Интерьер", "Interior", null, new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "loadSpinner", OnBegin = "begin", UpdateTargetId = "carusel", InsertionMode = InsertionMode.Replace, AllowCache = true, OnFailure = "fail" }, new { @class = "nav-link", id = "linkInterior" })
+        </li>
+    </ul>
+    <div class="row mt-2">
+        <div class="spinner-grow text-warning mx-auto" role="status" id="loadSpinner" style="display:none;">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div id="carusel"> @Html.Partial("Exterior")</div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        function begin() {
+            document.getElementById('carusel').innerHTML = '';
+            if (this.id == 'linkInterior') {
+                document.getElementById('linkInterior').className = 'nav-link active';
+                document.getElementById('linkExterior').className = 'nav-link';
+            }
+            else {
+                document.getElementById('linkInterior').className = 'nav-link';
+                document.getElementById('linkExterior').className = 'nav-link active';
+            }
+        }
+        function fail() {
+            var div = document.createElement('div');
+            div.className = 'alert alert-danger';
+            div.setAttribute('role', 'alert');
+            div.appendChild(document.createTextNode('Нет связи с сервером'));
+            document.getElementById('carusel').appendChild(div);
+        }
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            e.target // newly activated tab
+            e.relatedTarget // previous active tab
+        })
+    </script>
+    }

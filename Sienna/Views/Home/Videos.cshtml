@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Videos";
+}
+
+<h2>Видеообзоры</h2>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#player1" role="tab" aria-controls="player1" aria-selected="true">Рекламное видео LE</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#player2" role="tab" aria-controls="player2" aria-selected="false">Обзор LE на английском</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#player3" role="tab" aria-controls="player3" aria-selected="false">
+            Анонс от Auto News
+        </a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="player1" role="tabpanel" aria-labelledby="player1-tab"><iframe src="//www.youtube-nocookie.com/embed/t5gj7Zsw97M?rel=0&amp;showinfo=0" allowfullscreen="" width="100%" height="430" frameborder="0"></iframe></div>
+    <div class="tab-pane fade" id="player2" role="tabpanel" aria-labelledby="player2-tab"><iframe src="//www.youtube-nocookie.com/embed/-bfA00vP3D0?rel=0&amp;showinfo=0" allowfullscreen="" width="100%" height="430" frameborder="0"></iframe></div>
+    <div class="tab-pane fade" id="player3" role="tabpanel" aria-labelledby="player3-tab"><iframe src="//www.youtube-nocookie.com/embed/2Og-e5I2FPs?rel=0&amp;showinfo=0" allowfullscreen="" width="100%" height="430" frameborder="0"></iframe></div>
+</div>

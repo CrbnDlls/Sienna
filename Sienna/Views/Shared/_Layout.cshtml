@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Minivan 2021 Hybrid Toyota Sienna LE AWD</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJZF6YRHRF"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-CJZF6YRHRF');
+        </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="text-align:center;padding-left:64px;padding-right:64px;">
+        <a class="navbar-brand" href="/Home/Index">
+            <img src="~/Images/brand.gif" width="68" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            Главная
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    @Html.ActionLink("Дизайн", "Design", "Home", new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Характеристики", "Specification", "Home", new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Видеообзор", "Videos", "Home", new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Фото", "Photo", "Home", new { @class = "nav-link" })
+                </li>
+            </ul>
+        </div>
+
+        <div class="d-flex">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item mr-2"><span class="navbar-text">Время работы: 9:00-18:00. По всем вопросам:</span></li>
+                <li class="nav-item"><a class="navbar-brand" href="tel:+380937115753">+38 (093) 711 57 53</a></li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Тойота Сиена 2021 года Полноприводный Гибридный 8-ми местный Микроавтобус </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/ajax")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
